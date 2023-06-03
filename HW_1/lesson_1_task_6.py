@@ -23,7 +23,7 @@ def j():
 result = h() + h() + j() + j() + e() + e() + e() + c() + e() + c() + e()
 print(result)
 
-# -  Другой способ не в строчку
+#  -  Другой способ не в строчку
 
 def aa():
     print(1)
@@ -58,4 +58,38 @@ ee()
 cc()
 ee()
 
+#  - https://dev-gang.ru/article/python-funkcija-print-i-parametr-end-uxnl9natxr/
+#  - Использование параметра end в print() 
 
+def aa():
+    print(1, end = ' ')
+def bb():
+    print(2, end = ' ')
+def cc():
+    print(3, end = ' ')
+def dd():
+    print(4, end = ' ')
+def ee():
+    print(5, end = ' ')
+def ff():
+    print(6, end = ' ')
+def gg():
+    print(7, end = ' ')
+def hh():
+    print(8, end = ' ')
+def ii():
+    print(9, end = ' ')
+def jj():
+    print(0, end = ' ')
+
+hh() 
+hh()
+jj()
+jj()
+ee()
+ee()
+ee()
+cc()
+ee()
+cc()
+ee()
