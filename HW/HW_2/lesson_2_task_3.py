@@ -45,20 +45,52 @@
 
 #  -- способ через "IF" используя оператор "isinstance"  --
 
-import math  
+# import math  
 
-def square(side):
-    if isinstance(side, (int, float)):
-        result = math.ceil(side ** 2)
-        print(f"Площадь квадрата = {result}")
-    else:
-        print("Вы ввели не верные данные")
+# def square(side):
+#     if isinstance(side, (int, float)):
+#         result = math.ceil(side ** 2)
+#         print(f"Площадь квадрата = {result}")
+#     else:
+#         print("Вы ввели не верные данные")
 
-side = int or float(input("Введите длину стороны квадрата: "))
+# side = int or float(input("Введите длину стороны квадрата: "))
 
-square(side)
 
 # square(5)
 # square(34.3)
 # square("sdgfh")
 
+# -- способ с "try" и "except" ввод значения с консоли, проврка на корректность данных при вводе -- 
+
+import math
+
+def square(side):
+    try:
+        side = int(side)
+        if side > 0:
+            area = side ** 2
+            print("Площадь квадрата:", area)
+            return True
+        else:
+            print("Вы ввели неположительное число, попробуйте еще раз")
+            return False
+    except ValueError:
+        try:
+            side = float(side)
+            if side > 0:
+                area = math.ceil(side ** 2)
+                print("Площадь квадрата:", area)
+                return True
+            else:
+                print("Вы ввели не положительное число, попробуйте еще раз")
+                return False
+        except ValueError:
+            print("Вы ввели неверные данные, попробуйте еще раз")
+            return False
+
+
+while True:
+    side = input("Введите сторону квадрата: ")
+    if square(side):
+        break
