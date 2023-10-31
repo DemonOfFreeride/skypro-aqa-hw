@@ -11,9 +11,7 @@ driver = webdriver.Chrome()
 driver.get("http://uitestingplayground.com/dynamicid")
 
 # Нажать на кнопку "Button with Dynamic ID" 
-button = driver.find_element(By.CSS_SELECTOR, ".btn")
-button.click()
-
+driver.find_element(By.CSS_SELECTOR, ".btn").click()
 sleep(3)
 
 
@@ -25,9 +23,7 @@ driver = webdriver.Firefox(options=options)
 driver.get("http://uitestingplayground.com/dynamicid")
 
 # Нажать на кнопку "Button with Dynamic ID" 
-button = driver.find_element(By.CSS_SELECTOR, ".btn")
-button.click()
-
+driver.find_element(By.CSS_SELECTOR, ".btn").click()
 time.sleep(3)
 driver.quit()
 

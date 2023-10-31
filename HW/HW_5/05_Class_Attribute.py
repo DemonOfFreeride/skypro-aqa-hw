@@ -11,8 +11,7 @@ driver = webdriver.Chrome()
 driver.get("http://uitestingplayground.com/classattr")
 
 # Нажать на синию кнопку "Button" 
-button = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
-button.click()
+driver.find_element(By.CSS_SELECTOR, '.btn-primary').click()
 
 sleep(3)
 
@@ -24,10 +23,10 @@ driver = webdriver.Firefox(options=options)
 driver.get("http://uitestingplayground.com/classattr")
 
 # Нажать на синию кнопку "Button" 
-button = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
-button.click()
+driver.find_element(By.CSS_SELECTOR, '.btn-primary').click()
 
 time.sleep(3)
 driver.quit()
 
-# При открытыии или перезагрузки страницы кнопки меняют положение, при этом меняя классы лоя кнопок class1, class2 или class3 соответсвенно
+# При новом открытыии или перезагрузки страницы кнопки меняют положение, при этом классы "class1", "class2" и "class3" меняются местами,
+# только при нажатии на синюю кнопку всплывает модальное окно.
