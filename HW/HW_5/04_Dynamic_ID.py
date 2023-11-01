@@ -11,8 +11,12 @@ driver = webdriver.Chrome()
 driver.get("http://uitestingplayground.com/dynamicid")
 
 # Нажать на кнопку "Button with Dynamic ID" 
-driver.find_element(By.CSS_SELECTOR, ".btn").click()
-sleep(3)
+for _ in range(3):
+    button = driver.find_element(By.CSS_SELECTOR, ".btn")
+    button.click()
+
+# button = driver.find_element(By.CSS_SELECTOR, ".btn").click()
+sleep(5)
 
 
 # Инициализация драйвера 
@@ -28,4 +32,4 @@ time.sleep(3)
 driver.quit()
 
 
-# При перпезагрузки страницы, каждый раз изменяется "id" класса "btn btn-primary"
+# При перезагрузки страницы, каждый раз изменяется "id" класса "btn btn-primary", нужно это иметь ввиду когда выбираешь селектор для кнопки.
