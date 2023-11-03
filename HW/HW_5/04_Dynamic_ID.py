@@ -10,12 +10,11 @@ driver = webdriver.Chrome()
 # Открытие страницы в браузере Google chrome
 driver.get("http://uitestingplayground.com/dynamicid")
 
-# Нажать на кнопку "Button with Dynamic ID" 
+# Нажать на кнопку "Button with Dynamic ID" 3 раза
 for _ in range(3):
     button = driver.find_element(By.CSS_SELECTOR, ".btn")
     button.click()
 
-# button = driver.find_element(By.CSS_SELECTOR, ".btn").click()
 sleep(5)
 
 

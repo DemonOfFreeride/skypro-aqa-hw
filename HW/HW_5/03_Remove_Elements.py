@@ -15,11 +15,13 @@ for _ in range(5):
     button = driver.find_element(By.CSS_SELECTOR, "button[onclick='addElement()']")
     button.click()
 
+sleep(3)
+
 # Выведите на экран размер списка кнопок "Delete".
 Delete_button = driver.find_elements(By.CSS_SELECTOR, 'button.added-manually')
 print("Браузер Google Chrome, количество  кнопок 'Delete' -", len(Delete_button))
 
-sleep(3)
+
 
 
 # Инициализация драйвера Firefox
@@ -34,9 +36,10 @@ for _ in range(5):
     button = driver.find_element(By.CSS_SELECTOR, 'button[onclick="addElement()"]')
     button.click()
 
+time.sleep(3)
+
 # Выведите на экран размер списка кнопок "Delete".
 Delete_button = driver.find_elements(By.CSS_SELECTOR, 'button.added-manually')
 print("Браузер FireFOX, количество кнопок 'Delete' -", len(Delete_button))
 
-time.sleep(3)
 driver.quit()
