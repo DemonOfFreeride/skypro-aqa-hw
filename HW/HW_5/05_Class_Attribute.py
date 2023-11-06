@@ -10,18 +10,11 @@ driver = webdriver.Chrome()
 # Открытие страницы в браузере Google chrome
 driver.get("http://uitestingplayground.com/classattr")
 
-# Назатие 3 раза на синюю кнопку вместе с кнопкой "Ok" модального окна
-for _ in range(3):
-    driver.find_element(By.CSS_SELECTOR, 'button.btn-primary').click()
-    
-    sleep(2) # пауза что бы модальное окно успело появится
-    
-    alert = Alert(driver)
-    alert.accept() # нажатие на кнопку "Ок" модального окна
+# Нажать на синию кнопку "Button" 
+button = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
+button.click()
 
-    sleep(1)
-
-driver.quit()
+sleep(3)
 
 # Инициализация драйвера 
 options = Options()
@@ -30,19 +23,11 @@ driver = webdriver.Firefox(options=options)
 # Открытие страницы в браузере Firefox
 driver.get("http://uitestingplayground.com/classattr")
 
-# Назатие 3 раза на синюю кнопку вместе с кнопкой "Ok" модального окна
-for _ in range(3):
-    button = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
-    button.click()
-    
-    sleep(2) # пауза что бы модальное окно успело появится
-    
-    alert = Alert(driver)
-    alert.accept() # нажатие на кнопку "Ок" модального окна
+# Нажать на синию кнопку "Button" 
+button = driver.find_element(By.CSS_SELECTOR, 'button.btn-primary')
+button.click()
 
-    sleep(1)
-
+time.sleep(3)
 driver.quit()
 
-# При каждом новом открытыии или перезагрузки страницы кнопки меняют положение, 
-# при этом меняя классы для кнопок "class1", "class2" или "class3" соответсвенно
+# При открытыии или перезагрузки страницы кнопки меняют положение, при этом меняя классы лоя кнопок class1, class2 или class3 соответсвенно

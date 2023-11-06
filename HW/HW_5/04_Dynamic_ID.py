@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options
 # Инициализация драйвера 
 driver = webdriver.Chrome()
 
-# Открытие страницыв браузере Google chrome
+# Открытие страницы в браузере Google chrome
 driver.get("http://uitestingplayground.com/dynamicid")
 
 # Нажать на кнопку "Button with Dynamic ID" 5 раз 
