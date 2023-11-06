@@ -11,12 +11,13 @@ driver = webdriver.Chrome()
 driver.get("http://the-internet.herokuapp.com/entry_ad")
 
 # нужна пауза, т.к. следующая команда не успевает найти кнопку в модальном окне из за его задержки при появлении
-sleep(2) 
+sleep(3) 
 
 # Нажать на кнопку "Close" модального окна 
 driver.find_element(By.CSS_SELECTOR, ".modal-footer p").click()
 
-sleep(3)
+sleep(2)
+driver.quit()
 
 
 # Инициализация драйвера 
@@ -27,10 +28,10 @@ driver = webdriver.Firefox(options=options)
 driver.get("http://the-internet.herokuapp.com/entry_ad")
 
 # нужна пауза, т.к. следующая команда не успевает найти кнопку в модальном окне из за его задержки при появлении
-time.sleep(2)
+time.sleep(3)
 
 # Нажать на кнопку "Close" модального окна 
 driver.find_element(By.CSS_SELECTOR, ".modal-footer p").click()
 
-time.sleep(3)
+time.sleep(2)
 driver.quit()

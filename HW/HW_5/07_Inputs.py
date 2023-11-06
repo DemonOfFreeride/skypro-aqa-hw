@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
-import time
 
 # Инициализация драйвера Selenium 
 driver = webdriver.Chrome()
@@ -13,11 +12,12 @@ driver.get("https://the-internet.herokuapp.com/inputs")
 
 # Устанавливаем переменную для поля ввода
 input_field = driver.find_element(By.CSS_SELECTOR, "input")
+sleep(1)
 
 # Вводим 1000
 input_field.send_keys("1", "0", "0", "0")
 #input_field.send_keys(Keys.RETURN)
-sleep(3)
+sleep(2)
 
 # Стираем все поле
 input_field.clear()
@@ -25,8 +25,8 @@ sleep(1)
 
 # Вводим 999
 input_field.send_keys("999")
-sleep(3)
-
+sleep(2)
+driver.quit()
 
 # Инициализация драйвера 
 options = Options()
@@ -37,17 +37,18 @@ driver.get("https://the-internet.herokuapp.com/inputs")
 
 # Устанавливаем переменную для поля ввода
 input_field = driver.find_element(By.CSS_SELECTOR, "input")
+sleep(1)
 
 # Вводим 1000
 input_field.send_keys("1", "0", "0", "0")
 input_field.send_keys(Keys.RETURN)
-time.sleep(3)
+sleep(2)
 
 # Стираем все поле
 input_field.clear()
-time.sleep(1)
+sleep(1)
 
 # Вводим 999
 input_field.send_keys("999")
-time.sleep(3)
+sleep(2)
 driver.quit()

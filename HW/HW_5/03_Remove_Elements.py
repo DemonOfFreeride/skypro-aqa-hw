@@ -15,8 +15,6 @@ for _ in range(5):
 
 sleep(2)
 
-sleep(3)
-
 # Выведите на экран размер списка кнопок "Delete".
 Delete_button = driver.find_elements(By.CSS_SELECTOR, 'button.added-manually')
 print("Браузер Google Chrome, количество  кнопок 'Delete' -", len(Delete_button))
