@@ -10,13 +10,11 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get('https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html')
 driver.set_window_size(900, 850)
-sleep(1)
 
 delay = driver.find_element(By.CSS_SELECTOR, '#delay')
 delay.clear()
 time_dalay = 45
 delay.send_keys(time_dalay)
-sleep(1)
 
 driver.find_element(By.CSS_SELECTOR, '.clear').click()
 
@@ -29,16 +27,12 @@ operators = driver.find_elements(By.CSS_SELECTOR, '.btn-outline-success')
 # print(l_o)  # Посмотреть длинну списка операций
 
 buttons[0].click()
-sleep(1)
 
 operators[0].click()
-sleep(1)
 
 buttons[1].click()
-sleep(1)
 
 driver.find_element(By.CSS_SELECTOR, '.btn-outline-warning').click()
-sleep(1)
 
 waiter = WebDriverWait(driver, 1000) # Драйвер ждет много секунд
 

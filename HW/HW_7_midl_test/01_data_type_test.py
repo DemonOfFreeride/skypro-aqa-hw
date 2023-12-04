@@ -8,55 +8,44 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get('https://bonigarcia.dev/selenium-webdriver-java/data-types.html')
 driver.set_window_size(1280, 850)
-sleep(1)
 
 f_name = driver.find_element(By.CSS_SELECTOR, "[name='first-name']")
 f_name.clear()
 f_name.send_keys("Иван")
-sleep(1)
 
 l_name = driver.find_element(By.CSS_SELECTOR, "[name='last-name']")
 l_name.clear()
 l_name.send_keys("Петров")
-sleep(1)
 
 address = driver.find_element(By.CSS_SELECTOR, "[name='address']")
 address.clear()
 address.send_keys("Ленина, 55-3")
-sleep(1)
 
 city = driver.find_element(By.CSS_SELECTOR, "[name='city']")
 city.clear()
 city.send_keys("Москва")
-sleep(1)	
 
 country = driver.find_element(By.CSS_SELECTOR, "[name='country']")
 country.clear()
 country.send_keys("Россия")
-sleep(1)	
 
 email = driver.find_element(By.CSS_SELECTOR, "[name='e-mail']")
 email.clear()
 email.send_keys("test@skypro.com")
-sleep(1)	
 
 phone = driver.find_element(By.CSS_SELECTOR, "[name='phone']")
 phone.clear()
-phone.send_keys("+7985899998787")
-sleep(1)	
+phone.send_keys("+7985899998787")	
 
 job_pos = driver.find_element(By.CSS_SELECTOR, "[name='job-position']")
 job_pos.clear()
 job_pos.send_keys("QA")
-sleep(1)	
 
 company = driver.find_element(By.CSS_SELECTOR, "[name='company']")
 company.clear()
 company.send_keys("SkyPro")
-sleep(1)	
 
 driver.find_element(By.CSS_SELECTOR, "[type='submit']").click()
-sleep(2)
 
 zip_code_field_color = driver.find_element(By.CSS_SELECTOR, "#zip-code")
 print(f" цвет не заполненного поля - {zip_code_field_color.value_of_css_property('background-color')}") # цвет НЕ заполенного поля после нажатия на кнопку "Submit"
