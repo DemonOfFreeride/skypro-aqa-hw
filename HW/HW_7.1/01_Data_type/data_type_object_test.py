@@ -26,13 +26,38 @@ def test_data_type():
     data_type.company("SkyPro")
     data_type.submit()
     
-    # Проверка на соответсвие цета поля: заполненное - ЗЕЛЕНОЕ, пустое - КРАССНОЕ
-    full_field = ("rgba(209, 231, 221, 1)") 
-    empty_field = ("rgba(248, 215, 218, 1)")
+    # Проверка на соответсвие цета поля
+    full_field = ("rgba(209, 231, 221, 1)") #  заполненное поле - ЗЕЛЕНОЕ
+    empty_field = ("rgba(248, 215, 218, 1)") #  пустое поле - КРАССНОЕ
     
+    color_check = {
+    "first_name": data_type.get_first_name_color(),
+    "last_name": data_type.get_last_name_color(),
+    "address": data_type.get_addr_color(),
+    "zip_code": data_type.get_zip_code_color(),
+    "city": data_type.get_city_color(),
+    "country": data_type.get_country_color(),
+    "email": data_type.get_email_color(),
+    "phone": data_type.get_phone_color(),
+    "job_position": data_type.get_job_pos_color(),
+    "company": data_type.get_company_color(),
+    }
+
+    errors = []
+    for field, expected_color in color_check.items():
+        try:
+            if expected_color == empty_field:
+                assert expected_color == empty_field, f"Цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (пустое поле)."
+            else:
+                assert expected_color == full_field, f"Цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (заполненное поле)."
+            print(f"Цвет поля - {field} - соответствует ожидаемому цвету.")
+        except AssertionError as e:
+            error_message = str(e)
+            if error_message not in errors:
+                errors.append(error_message)
     
-    
-    
-    
+    for error in errors:
+        print(error)
+        
     sleep(2)
     browser.quit()
