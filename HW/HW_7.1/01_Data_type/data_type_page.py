@@ -90,17 +90,3 @@ class DataType:
     
     def get_company_color(self): 
         return self._driver.find_element(By.CSS_SELECTOR, "#company").value_of_css_property("background-color")
-    
-    
-        
-    # def check_field_color(self):
-    #     color_first_name = self._driver.find_element(By.CSS_SELECTOR, "#first-name").value_of_css_property("background-color")
-    #     color_last_name = self._driver.find_element(By.CSS_SELECTOR, "#last-name").value_of_css_property("background-color")
-    #     color_addr = self._driver.find_element(By.CSS_SELECTOR, "#address").value_of_css_property("background-color")
-    #     color_city = self._driver.find_element(By.CSS_SELECTOR, "#city").value_of_css_property("background-color")
-    #     color_zip_code = self._driver.find_element(By.CSS_SELECTOR, "#zip-code").value_of_css_property("background-color")
-    #     color_country = self._driver.find_element(By.CSS_SELECTOR, "#country").value_of_css_property("background-color")
-    #     color_email = self._driver.find_element(By.CSS_SELECTOR, "#e-mail").value_of_css_property("background-color")
-    #     color_phone = self._driver.find_element(By.CSS_SELECTOR, "#phone").value_of_css_property("background-color")
-    #     color_job_pos = self._driver.find_element(By.CSS_SELECTOR, "#job-position").value_of_css_property("background-color")
-    #     color_company = self._driver.find_element(By.CSS_SELECTOR, "#company").value_of_css_property("background-color")
