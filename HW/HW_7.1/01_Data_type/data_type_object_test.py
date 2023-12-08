@@ -44,13 +44,14 @@ def test_data_type():
     }
 
     errors = []
+    
     for field, expected_color in color_check.items():
         try:
             if expected_color == empty_field:
-                assert expected_color == empty_field, f"Цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (пустое поле)."
+                assert expected_color == empty_field, f" * ОШИБКА *  цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (пустое поле)."
             else:
-                assert expected_color == full_field, f"Цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (заполненное поле)."
-            print(f"Цвет поля - {field} - соответствует ожидаемому цвету.")
+                assert expected_color == full_field, f" * ОШИБКА *  цвет поля - {field} - НЕ СООТВЕТСТВУЕТ ожидаемому цвету (заполненное поле)."
+            print(f"   - ОК - цвет поля - {field} - соответствует ожидаемому цвету.")
         except AssertionError as e:
             error_message = str(e)
             if error_message not in errors:
@@ -58,6 +59,6 @@ def test_data_type():
     
     for error in errors:
         print(error)
-        
+    
     sleep(2)
     browser.quit()
