@@ -37,7 +37,8 @@ def test_calculator():
         "x": 3 
     }   
     
-    calculator.delay("2") # Задержка вывода результата в сек.
+    delay = 4
+    calculator.delay(delay) # Задержка вывода результата в сек.
     calculator.clear_btn()
     
     # нажать на кнопку "7"
